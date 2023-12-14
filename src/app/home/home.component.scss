@@ -1,0 +1,62 @@
+.mainSection{
+    position: relative;
+}
+.bgImg{
+    opacity: 0.2;
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.leftContent {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .headline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  p{
+    width: 75%;
+    text-align: justify;
+  }
+}
+
+.rightContent {
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.selection{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.detailButton{
+    margin-top: 10px;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1030px) {
+    .rightContent {    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  }
+

@@ -1,0 +1,71 @@
+<div class="mainSection">
+  <img src="../../assets/bg.jpg" alt="" class="bgImg">
+  <div class="container main">
+    <div class="row">
+      <div *ngIf="charLen>0" class="col-md-6 leftContent">
+        <div class="row">
+          <div class="col headline">
+            <h2 class="text-center">Unraveling the Last 15 Days of Global Price Movements</h2>
+            <p>Explore how global currencies have danced to the rhythm of economic changes. Select your currency,
+                witness its price evolution, and gain valuable insights for strategic decisions. Unravel the mysteries of
+                financial markets and stay ahead in your understanding of currency dynamics. Step into the world of
+                Currency Chronicles – where every price tells a story.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col selection">
+            <div class="btn">Select Currency</div>
+            <select [(ngModel)]="selectedCurrency">
+              <option selected value="">Select an option</option>
+              <option *ngFor="let currency of currencies" [value]="currency.code">
+                {{ currency.name }} ({{ currency.code }})
+              </option>
+            </select>
+            <button (click)="GetCurrencyStatus()" class="detailButton">Get Details</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="charLen<=0" class="col-12 leftContent">
+        <div class="row">
+          <div class="col headline">
+            <h2 class="text-center">Unraveling the Last 15 Days of Global Price Movements</h2>
+            <p>Explore how global currencies have danced to the rhythm of economic changes. Select your currency,
+              witness its price evolution, and gain valuable insights for strategic decisions. Unravel the mysteries of
+              financial markets and stay ahead in your understanding of currency dynamics. Step into the world of
+              Currency Chronicles – where every price tells a story.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col selection">
+            <div class="btn">Select Currency</div>
+            <select [(ngModel)]="selectedCurrency">
+              <option selected value="">Select an option</option>
+              <option *ngFor="let currency of currencies" [value]="currency.code">
+                {{ currency.name }} ({{ currency.code }})
+              </option>
+            </select>
+            <button (click)="GetCurrencyStatus()" class="detailButton">Get Details</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="charLen>0" class="col-md-6 rightContent">
+        <table class="table table-stripped table-condensed table-bordered text-center animated-table">
+          <thead>
+            <tr>
+              <th>S.NO</th>
+              <th>DATE</th>
+              <th>RATE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let value of formattedValue;let i = index">
+              <td>{{i+1}}</td>
+              <td>{{formatTableDate[i]}}</td>
+              <td>{{value}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
